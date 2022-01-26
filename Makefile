@@ -10,9 +10,14 @@ MLX_FLAGS	=	-framework OpenGL -framework Appkit
 
 HEADER		=	-I includes -I mlx
 
-SRCS		=	./src/test.c
-
-BONUS_SRCS	=	./src_bonus/*.c
+SRCS		=	./srcs/so_long.c								\
+				./srcs/utils/ft_strlen.c						\
+				./srcs/parsing/ft_check_extension.c				\
+				./srcs/parsing/ft_error_finder.c				\
+				./srcs/parsing/ft_check_file.c					\
+				./srcs/parsing/ft_check_path_to_dir.c			\
+				./srcs/parsing/ft_exit.c						\
+				./srcs/ft_my_mlx_pixel_put.c
 
 OBJS		=	${SRCS:.c=.o}
 
@@ -24,10 +29,6 @@ BONUS_OBJS	=	${BONUS_SRCS:.c=.o}
 $(NAME)	:	$(OBJS)
 	make -C mlx
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(LIB_FLAG) $(MLX_FLAGS)
-
-bonus	:	$(BONUS_OBJS)
-	make -C mlx
-	$(CC) $(FLAGS) $(BONUS_OBJS) -o $(NAME) $(LIB_FLAG) $(MLX_FLAGS)
 
 all		:	$(NAME)
 
