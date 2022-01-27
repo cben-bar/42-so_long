@@ -6,28 +6,40 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:41:27 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/25 15:20:56 by cben-bar         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:53:36 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+int	ft_win_action(int keycode, t_vars vars)
+{
+	if (keycode == KEY_ESC)
+	{
+	//	mlx_destroy_image(vars.mlx, vars.img.img);
+	//	vars.img.addr = NULL;
+		mlx_destroy_window(vars.mlx, vars.win);
+		exit(EXIT_SUCCESS);
+	}
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
-	void	*mlx;
-	void	*mlx_win;
 //	char	*relative_path = "../img/blopblop.xpm";
-//	int		img_width;
-//	int		img_height;
-	t_data	img;
+//	int		img_width = 4;
+//	int		img_height = 4;
+	t_vars	vars;
 
 	ft_error_finder(argc, argv[1]);
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 500, 500, "so_long");
-	img.img = mlx_new_image(mlx, 500, 500);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-	ft_my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
-//	img.img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_loop(mlx);
+	vars.mlx = mlx_init();
+	vars.win = mlx_new_window(vars.mlx, 1000, 1000, "so_long");
+	vars.img.img = mlx_new_image(vars.mlx, 500, 500);
+	vars.img.addr = mlx_get_data_addr(vars.img.img, &vars.img.bits_per_pixel, &vars.img.line_length, &vars.img.endian);
+	ft_my_mlx_pixel_put(&vars.img, 5, 5, 0x00FF0000);
+//	vars.img.img = mlx_xpm_file_to_image(vars.mlx, relative_path, &img_width, &img_height);
+	mlx_put_image_to_window(vars.mlx, vars.win, vars.img.img, 0, 0);
+	mlx_key_hook(vars.win, ft_win_action, &vars);
+//	mlx_hook(vars.win, 2, 1L<<0, ft_win_action, &vars);
+	mlx_loop(vars.mlx);
 }

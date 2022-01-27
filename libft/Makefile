@@ -6,7 +6,7 @@
 #    By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 17:54:31 by cben-bar          #+#    #+#              #
-#    Updated: 2021/11/18 02:26:33 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/01/27 19:55:13 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRCS		=	ft_atoi.c			\
 				ft_strlen.c			\
 				ft_strmapi.c		\
 				ft_strncmp.c		\
+				ft_strndup.c		\
 				ft_strnstr.c		\
 				ft_strrchr.c		\
 				ft_strtrim.c		\
@@ -59,7 +60,8 @@ BON			=	ft_lstadd_front.c	\
 				ft_lstdelone.c		\
 				ft_lstclear.c		\
 				ft_lstiter.c		\
-				ft_lstmap.c
+				ft_lstmap.c			\
+				get_next_line.c
 
 OBJS		= 	$(SRCS:.c=.o)
 

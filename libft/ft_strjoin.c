@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_sjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 00:13:48 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/11/15 01:18:27 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/01/27 19:39:36 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_sjoin(const char *s1, const char *s2)
 {
-	char	*final_s;
+	char	*joined;
+	size_t	len;
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	j = 0;
-	final_s = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
-	if (!final_s)
+	i = -1;
+	j = -1;
+	if (!s1 || !s2)
 		return (NULL);
-	while (s1[j] != '\0')
-	{
-		final_s[i] = s1[j];
-		i++;
-		j++;
-	}
-	j = 0;
-	while (s2[j] != '\0')
-	{
-		final_s[i] = s2[j];
-		i++;
-		j++;
-	}
-	final_s[i] = '\0';
-	return (final_s);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	joined = malloc(sizeof(char) * (len + 1));
+	if (!joined)
+		return (NULL);
+	while (s1[++i])
+		joined[i] = s1[i];
+	while (s2[++j])
+		joined[i + j] = s2[j];
+	joined[len] = '\0';
+	return (joined);
 }
