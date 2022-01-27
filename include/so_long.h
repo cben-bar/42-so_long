@@ -8,6 +8,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include "../mlx/mlx.h"
+# include "../libft/libft.h"
 
 # define KEY_ESC 53
 /*# define KEY_UP 13
@@ -40,7 +41,6 @@ typedef struct	s_vars
 
 int		main(int argc, char **argv);
 int		ft_error_finder(int nb_params, const char *file_name);
-size_t	ft_strlen(const char *str);
 int		ft_check_extension(const char *file_name);
 int		ft_check_file(const char *file_name);
 int		ft_check_path_to_dir(const char *file_name);

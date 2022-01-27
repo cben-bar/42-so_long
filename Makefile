@@ -4,14 +4,13 @@ CC			=	gcc
 
 FLAGS		=	-Wall -Wextra -Werror
 
-LIB_FLAG	=	-L mlx -l mlx
+LIB_FLAG	=	-L mlx -l mlx libft/libft.a
 
 MLX_FLAGS	=	-framework OpenGL -framework Appkit
 
-HEADER		=	-I includes -I mlx
+HEADER		=	-I includes -I mlx -I libft
 
 SRCS		=	./srcs/so_long.c								\
-				./srcs/utils/ft_strlen.c						\
 				./srcs/parsing/ft_check_extension.c				\
 				./srcs/parsing/ft_error_finder.c				\
 				./srcs/parsing/ft_check_file.c					\
@@ -28,16 +27,19 @@ BONUS_OBJS	=	${BONUS_SRCS:.c=.o}
 
 $(NAME)	:	$(OBJS)
 	make -C mlx
+	make -C libft
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(LIB_FLAG) $(MLX_FLAGS)
 
 all		:	$(NAME)
 
 clean	: 
 	make clean -C mlx
+	make clean -C libft
 	rm -rf $(OBJS) $(BONUS_OBJS)
 
 fclean	:	clean
 	make clean -C mlx
+	make fclean -C libft
 	rm -rf $(NAME)
 
 re		:	fclean all
