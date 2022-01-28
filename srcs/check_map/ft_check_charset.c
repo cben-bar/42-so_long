@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_map_intruder.c                            :+:      :+:    :+:   */
+/*   ft_check_charset.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 19:20:38 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 19:53:46 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2022/01/28 19:50:09 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/01/28 19:53:44 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-t_bool	ft_check_map_intruder(t_data *data, const char *charset)
+t_bool	ft_check_charset(char c, const char *charset)
 {
-	size_t	x;
-	size_t	y;
+	size_t	i;
 
-	y = 0;
-	while (y < data->y_max)
+	i = 0;
+	while (charset[i])
 	{
-		x = 0;
-		while (x < data->x_max)
-		{
-			if (!ft_check_charset(data->map_line[y][x], charset);
-				return (false);
-			x++;
-		}
-		y++;
+		if (c != charset[i])
+			return (false);
+		i++;
 	}
 	return (true);
 }
