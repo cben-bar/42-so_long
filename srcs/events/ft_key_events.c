@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:44:01 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 14:44:04 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/01/28 18:41:40 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_key_events(int keycode, t_vars vars)
 	(void)vars;
 	if (keycode == KEY_ESC)
 	{
-		printf("✌️ Bye!\n");
+		printf("✌️  Bye!\n");
 		exit(EXIT_SUCCESS);
 	}
 	return (0);

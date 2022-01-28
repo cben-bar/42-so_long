@@ -6,13 +6,13 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 15:46:16 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/25 14:19:46 by cben-bar         ###   ########.fr       */
+/*   Updated: 2022/01/28 18:35:24 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	ft_check_path_to_dir(const char *file_name)
+t_bool	ft_check_path_to_dir(const char *file_name)
 {
 	int	fd;
 
@@ -20,8 +20,8 @@ int	ft_check_path_to_dir(const char *file_name)
 	if (fd == -1)
 	{
 		close(fd);
-		return (1);
+		return (true);
 	}
 	close(fd);
-	return (0);
+	return (false);
 }

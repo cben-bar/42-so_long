@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:20:18 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 15:00:38 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/01/28 18:38:25 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,19 @@
 
 //# define WALL_PATH "./sprites/1_coral_100x100.xpm"
 //# define EMPTY_PATH "./sprites/0_water_100x100.xpm"
-//# define P_PATH "./sprites/P_baby_100x100.xpm"
+# define P_PATH "./sprites/P_baby_100x100.xpm"
 //# define EXIT_PATH "./sprites/E_swat_100x100.xpm"
-# define C_PATH "./sprites/C_axe_100x100.xpm"
+//# define C_PATH "./sprites/C_axe_100x100.xpm"
+
+/* ****************************************************************************
+-------------------------------------ENUM-------------------------------------
+* ************************************************************************** */
+
+typedef enum	s_bool
+{
+	false,
+	true
+}				t_bool;
 
 /* ****************************************************************************
 ------------------------------------STRUCTS------------------------------------
@@ -55,6 +65,9 @@ typedef struct s_data
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	char	**map_line;
+	size_t	x_max;
+	size_t	y_max;
 }				t_data;
 
 typedef struct	s_vars
@@ -71,9 +84,9 @@ typedef struct	s_vars
 
 int		main(int argc, char **argv);
 int		ft_error_finder(int nb_params, const char *file_name);
-int		ft_check_extension(const char *file_name);
-int		ft_check_file(const char *file_name);
-int		ft_check_path_to_dir(const char *file_name);
+t_bool	ft_check_extension(const char *file_name);
+t_bool	ft_check_file(const char *file_name);
+t_bool	ft_check_path_to_dir(const char *file_name);
 void	ft_error_exit(const char *msg);
 
 /* ****************************************************************************
@@ -86,7 +99,8 @@ int	ft_close_mouse(t_vars vars);
 /* ****************************************************************************
 -----------------------------PROTOTYPES CHECK MAP-----------------------------
 * ************************************************************************** */
-
+t_data	*ft_init_map(char **av);
+t_data	*ft_map_filler(int fd, t_data *data);
 
 
 
