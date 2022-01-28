@@ -15,8 +15,10 @@ SRCS		=	./srcs/so_long.c								\
 				./srcs/parsing/ft_error_finder.c				\
 				./srcs/parsing/ft_check_file.c					\
 				./srcs/parsing/ft_check_path_to_dir.c			\
-				./srcs/parsing/ft_exit.c						\
-				./srcs/ft_my_mlx_pixel_put.c
+				./srcs/parsing/ft_error_exit.c					\
+				./srcs/display/ft_my_mlx_pixel_put.c			\
+				./srcs/events/ft_close_mouse.c					\
+				./srcs/events/ft_key_events.c
 
 OBJS		=	${SRCS:.c=.o}
 

@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exit.c                                          :+:      :+:    :+:   */
+/*   ft_my_mlx_pixel_put.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 13:27:14 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/25 13:38:44 by cben-bar         ###   ########.fr       */
+/*   Created: 2022/01/25 14:32:52 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/01/28 12:02:19 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
-
-void	ft_exit(const char *msg)
+#include "../include/so_long.h"
+void	ft_my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
-	printf("Error\n🤯 %s\n", msg);
-	exit(EXIT_SUCCESS);
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
 }
