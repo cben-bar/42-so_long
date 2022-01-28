@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 19:30:49 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 19:35:31 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/01/28 20:02:10 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_check_y_max(char **map_line)
 	size_t	i;
 
 	i = 0;
-	while (map[i])
+	while (map_line[i])
 		i++;
 	return (i);
 }

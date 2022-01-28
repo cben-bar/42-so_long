@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 19:20:38 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 19:53:46 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/01/28 20:04:15 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_bool	ft_check_map_intruder(t_data *data, const char *charset)
 		x = 0;
 		while (x < data->x_max)
 		{
-			if (!ft_check_charset(data->map_line[y][x], charset);
+			if (!ft_check_charset(data->map_line[y][x], charset))
 				return (false);
 			x++;
 		}

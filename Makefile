@@ -20,14 +20,15 @@ SRCS		=	./srcs/so_long.c									\
 				./srcs/events/ft_close_mouse.c						\
 				./srcs/events/ft_key_events.c						\
 				./srcs/check_map/ft_init_map.c						\
+				./srcs/check_map/ft_check_y_max.c					\
 				./srcs/check_map/ft_map_filler.c					\
 				./srcs/check_map/ft_check_map.c						\
 				./srcs/check_map/ft_check_map_intruder.c			\
 				./srcs/check_map/ft_check_charset.c					\
-				./srcs/check_map/ft_check_map_everybody_is_here.c	\
-				./srcs/check_map/ft_check_map_border.c				\
-				./srcs/check_map/ft_check_map_rect.c				\
-				./srcs/check_map/ft_check_y_max.c
+		#		./srcs/check_map/ft_check_map_everybody_is_here.c	\
+		#		./srcs/check_map/ft_check_map_border.c				\
+		#		./srcs/check_map/ft_check_map_rect.c				\
+		#		./srcs/check_map/ft_check_y_max.c
 
 
 OBJS		=	${SRCS:.c=.o}

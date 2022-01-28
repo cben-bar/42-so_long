@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:41:27 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 18:49:58 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/01/28 20:02:33 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 
 	ft_error_finder(ac, av[1]);
 	data = ft_init_map(av);
-//	ft_check_map(data);
+	ft_check_map(data);
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, 2000, 1000, "so_long");
 	vars.img.img = mlx_new_image(vars.mlx, 500, 500);
