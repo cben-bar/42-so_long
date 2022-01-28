@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_finder.c                                  :+:      :+:    :+:   */
+/*   ft_check_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/24 14:21:24 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 18:49:46 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2022/01/28 18:48:32 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/01/28 19:37:52 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	ft_error_finder(int nb_params, const char *file_name)
+void	ft_check_map(t_data *data)
 {
-	if (nb_params < 2)
-		ft_error_exit("Too few arguments");
-	if (nb_params > 2)
-		ft_error_exit("Too arguments");
-	if (!ft_check_path_to_dir(file_name))
-		ft_error_exit("Path to a directory");
-	if (!ft_check_file(file_name))
-		ft_error_exit("Invalid file");
-	if (!ft_check_extension(file_name))
-		ft_error_exit("Invalid extension");
+	if (!ft_check_map_intruder(data, "1PEC0"))
+		ft_error_exit("Map contains invalid characters");
+	if (!ft_check_map_everybody_is_here(data, "1PEC"))
+		ft_error_exit("Map does not contain all the required characters");
+	if (!ft_check_map_border(data))
+		ft_error_exit("Invalid map border");
+	if (!ft_check_map_rect(data))
+		ft_error_exit("Map is not rectangular");
 }

@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 18:08:51 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 18:11:47 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/01/28 19:35:29 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ t_data	*ft_init_map(char **av)
 	if (!data || fd == -1)
 		ft_error_exit("Initialisation failure");
 	ret = ft_map_filler(fd, data);
+	ret->x_max = ft_strlen(data->map_line[0]);
+	ret->y_max = ft_check_y_max(data->map_line);
 	return (ret);
 }

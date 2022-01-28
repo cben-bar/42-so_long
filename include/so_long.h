@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:20:18 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 18:38:25 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/01/28 19:35:36 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ typedef struct	s_vars
 * ************************************************************************** */
 
 int		main(int argc, char **argv);
-int		ft_error_finder(int nb_params, const char *file_name);
+void	ft_error_finder(int nb_params, const char *file_name);
 t_bool	ft_check_extension(const char *file_name);
 t_bool	ft_check_file(const char *file_name);
 t_bool	ft_check_path_to_dir(const char *file_name);
@@ -101,6 +101,12 @@ int	ft_close_mouse(t_vars vars);
 * ************************************************************************** */
 t_data	*ft_init_map(char **av);
 t_data	*ft_map_filler(int fd, t_data *data);
+size_t	ft_check_y_max(char **map_line);
+void	ft_check_map(t_data *data);
+t_bool	ft_check_map_intruder(t_data *data, const char *charset);
+t_bool	ft_check_map_everybody_is_here(t_data *data, const char *charset);
+t_bool	ft_check_map_border(t_data *data);
+t_bool	ft_check_map_rect(t_data *data);
 
 
 

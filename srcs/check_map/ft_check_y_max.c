@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_finder.c                                  :+:      :+:    :+:   */
+/*   ft_check_y_max.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/24 14:21:24 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 18:49:46 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2022/01/28 19:30:49 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/01/28 19:35:31 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	ft_error_finder(int nb_params, const char *file_name)
+size_t	ft_check_y_max(char **map_line)
 {
-	if (nb_params < 2)
-		ft_error_exit("Too few arguments");
-	if (nb_params > 2)
-		ft_error_exit("Too arguments");
-	if (!ft_check_path_to_dir(file_name))
-		ft_error_exit("Path to a directory");
-	if (!ft_check_file(file_name))
-		ft_error_exit("Invalid file");
-	if (!ft_check_extension(file_name))
-		ft_error_exit("Invalid extension");
+	size_t	i;
+
+	i = 0;
+	while (map[i])
+		i++;
+	return (i);
 }
