@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 18:48:32 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/01 18:57:01 by cben-bar         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:49:26 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,4 @@ void	ft_check_map(t_data *data)
 		ft_error_exit("Only one player is neded");
 	if (!ft_check_map_border(data))
 		ft_error_exit("Invalid map border");
-//	if (!ft_check_map_rect(data))
-//		ft_error_exit("Map is not rectangular");
 }

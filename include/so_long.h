@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:20:18 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/01 19:12:41 by cben-bar         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:50:53 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,13 @@ void	ft_error_exit(const char *msg);
 -------------------------------PROTOTYPES EVENTS-------------------------------
 * ************************************************************************** */
 
-int	ft_key_events(int keycode, t_vars vars);
-int	ft_close_mouse(t_vars vars);
+int		ft_key_events(int keycode, t_vars vars);
+int		ft_close_mouse(t_vars vars);
 
 /* ****************************************************************************
 -----------------------------PROTOTYPES CHECK MAP-----------------------------
 * ************************************************************************** */
+
 t_data	*ft_init_map(char **av);
 t_data	*ft_map_filler(int fd, t_data *data);
 size_t	ft_check_y_max(char **map_line);
@@ -108,9 +109,6 @@ t_bool	ft_check_charset(char c, const char *charset);
 t_bool	ft_check_map_everybody_is_here(t_data *data, const char *charset);
 t_bool	ft_check_map_just_one_p(t_data *data);
 t_bool	ft_check_map_border(t_data *data);
-//t_bool	ft_check_map_rect(t_data *data);
-
-
 
 /* ****************************************************************************
 ------------------------------PROTOTYPES DISPLAY------------------------------
