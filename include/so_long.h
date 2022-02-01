@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:20:18 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 19:57:10 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/01 12:37:45 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ size_t	ft_check_y_max(char **map_line);
 void	ft_check_map(t_data *data);
 t_bool	ft_check_map_intruder(t_data *data, const char *charset);
 t_bool	ft_check_charset(char c, const char *charset);
-//t_bool	ft_check_map_everybody_is_here(t_data *data, const char *charset);
+t_bool	ft_check_map_everybody_is_here(t_data *data, const char *charset);
 //t_bool	ft_check_map_border(t_data *data);
 //t_bool	ft_check_map_rect(t_data *data);
 

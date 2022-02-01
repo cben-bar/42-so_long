@@ -25,7 +25,7 @@ SRCS		=	./srcs/so_long.c									\
 				./srcs/check_map/ft_check_map.c						\
 				./srcs/check_map/ft_check_map_intruder.c			\
 				./srcs/check_map/ft_check_charset.c					\
-		#		./srcs/check_map/ft_check_map_everybody_is_here.c	\
+				./srcs/check_map/ft_check_map_everybody_is_here.c	\
 		#		./srcs/check_map/ft_check_map_border.c				\
 		#		./srcs/check_map/ft_check_map_rect.c				\
 		#		./srcs/check_map/ft_check_y_max.c
