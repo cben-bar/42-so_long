@@ -30,7 +30,10 @@ SRCS		=	./srcs/so_long.c									\
 				./srcs/check_map/ft_check_map_border.c				\
 				./srcs/check_map/ft_clear_leaks.c					\
 				./srcs/graphic/ft_init_win.c						\
-				./srcs/graphic/ft_init_image.c
+				./srcs/graphic/ft_init_image.c						\
+				./srcs/run/ft_run.c									\
+				./srcs/graphic/ft_push_img.c							\
+				./srcs/run/ft_player_pos.c
 
 OBJS		=	${SRCS:.c=.o}
 
