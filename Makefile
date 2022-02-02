@@ -16,19 +16,21 @@ SRCS		=	./srcs/so_long.c									\
 				./srcs/parsing/ft_check_file.c						\
 				./srcs/parsing/ft_check_path_to_dir.c				\
 				./srcs/parsing/ft_error_exit.c						\
-				./srcs/display/ft_my_mlx_pixel_put.c				\
 				./srcs/events/ft_close_mouse.c						\
 				./srcs/events/ft_key_events.c						\
 				./srcs/check_map/ft_init_map.c						\
 				./srcs/check_map/ft_check_y_max.c					\
+				./srcs/check_map/ft_check_c_max.c					\
 				./srcs/check_map/ft_map_filler.c					\
 				./srcs/check_map/ft_check_map.c						\
 				./srcs/check_map/ft_check_map_intruder.c			\
 				./srcs/check_map/ft_check_charset.c					\
 				./srcs/check_map/ft_check_map_everybody_is_here.c	\
 				./srcs/check_map/ft_check_map_just_one_p.c			\
-				./srcs/check_map/ft_check_map_border.c
-
+				./srcs/check_map/ft_check_map_border.c				\
+				./srcs/check_map/ft_clear_leaks.c					\
+				./srcs/graphic/ft_init_win.c						\
+				./srcs/graphic/ft_init_image.c
 
 OBJS		=	${SRCS:.c=.o}
 

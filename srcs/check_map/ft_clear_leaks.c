@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_key_events.c                                    :+:      :+:    :+:   */
+/*   ft_clear_leaks.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 14:44:01 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/02 14:48:47 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2022/02/02 13:40:32 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/02/02 13:44:59 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	ft_key_events(int keycode)
+void	ft_clear_leaks(t_data *data)
 {
-	if (keycode == KEY_ESC)
+	size_t	i;
+
+	i = 0;
+	while (data->map_line[i])
 	{
-		printf("✌️  Bye!\n");
-		exit(EXIT_SUCCESS);
+		free(data->map_line[i]);
+		i++;
 	}
-	return (0);
+	free(data->map_line);
+	free(data);
 }

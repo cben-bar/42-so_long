@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:20:18 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/01 19:50:53 by cben-bar         ###   ########.fr       */
+/*   Updated: 2022/02/02 15:44:56 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@
 ---------------------------------SPRITES PATH----------------------------------
 * ************************************************************************** */
 
-//# define WALL_PATH "./sprites/1_coral_100x100.xpm"
-//# define EMPTY_PATH "./sprites/0_water_100x100.xpm"
+# define WALL_PATH "./sprites/1_coral_100x100.xpm"
+# define EMPTY_PATH "./sprites/0_water_100x100.xpm"
 # define P_PATH "./sprites/P_baby_100x100.xpm"
-//# define EXIT_PATH "./sprites/E_swat_100x100.xpm"
-//# define C_PATH "./sprites/C_axe_100x100.xpm"
+# define EXIT_PATH "./sprites/E_swat_100x100.xpm"
+# define C_PATH "./sprites/C_axe_100x100.xpm"
 
 /* ****************************************************************************
 -------------------------------------ENUM-------------------------------------
@@ -58,25 +58,36 @@ typedef enum	s_bool
 ------------------------------------STRUCTS------------------------------------
 * ************************************************************************** */
 
+typedef struct	s_image
+{
+	void	*player;
+	void	*wall;
+	void	*empty;
+	void	*collectible;
+	void	*exit;
+}				t_image;
+
 typedef struct s_data
 {
-	void	*img;
+	char	**map_line;
+	void	*mlx;
+	void	*win;
+	t_image	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-	char	**map_line;
 	size_t	x_max;
 	size_t	y_max;
+	size_t	c_max;
 }				t_data;
 
-typedef struct	s_vars
-{
-	void	*mlx;
-	void	*win;
-	int		windowClose;
-	t_data	img;
-}				t_vars;
+/* ****************************************************************************
+----------------------------------DEFINE SIZE----------------------------------
+* ************************************************************************** */
+
+# define W 10
+# define H 10
 
 /* ****************************************************************************
 ------------------------------PROTOTYPES PARSING------------------------------
@@ -93,29 +104,31 @@ void	ft_error_exit(const char *msg);
 -------------------------------PROTOTYPES EVENTS-------------------------------
 * ************************************************************************** */
 
-int		ft_key_events(int keycode, t_vars vars);
-int		ft_close_mouse(t_vars vars);
+int		ft_key_events(int keycode);
+int		ft_close_mouse(t_data *data);
 
 /* ****************************************************************************
------------------------------PROTOTYPES CHECK MAP-----------------------------
+-------------------------PROTOTYPES CHECK & CLEAR MAP-------------------------
 * ************************************************************************** */
 
 t_data	*ft_init_map(char **av);
 t_data	*ft_map_filler(int fd, t_data *data);
 size_t	ft_check_y_max(char **map_line);
+size_t	ft_check_c_max(t_data *data);
 void	ft_check_map(t_data *data);
 t_bool	ft_check_map_intruder(t_data *data, const char *charset);
 t_bool	ft_check_charset(char c, const char *charset);
 t_bool	ft_check_map_everybody_is_here(t_data *data, const char *charset);
 t_bool	ft_check_map_just_one_p(t_data *data);
 t_bool	ft_check_map_border(t_data *data);
+void	ft_clear_leaks(t_data *data);
 
 /* ****************************************************************************
-------------------------------PROTOTYPES DISPLAY------------------------------
+------------------------------PROTOTYPES GRAPHIC------------------------------
 * ************************************************************************** */
 
-void	ft_my_mlx_pixel_put(t_data *data, int x, int y, int color);
-
+void	ft_init_win(void **mlx, void **win, t_data *data);
+t_image	*ft_init_image(t_data *data);
 
 /* ****************************************************************************
 --------------------------------PROTOTYPES--------------------------------

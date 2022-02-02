@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:04:45 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 14:04:50 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/02 13:38:50 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_error_exit(const char *msg)
 {
 	printf("Error\n🤯 %s\n", msg);
-	exit(EXIT_SUCCESS);
+	exit(EXIT_FAILURE);
 }

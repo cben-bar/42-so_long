@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_my_mlx_pixel_put.c                              :+:      :+:    :+:   */
+/*   ft_check_c_max.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 14:32:52 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 12:02:19 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2022/02/02 13:18:23 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/02/02 13:24:08 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
-void	ft_my_mlx_pixel_put(t_data *data, int x, int y, int color)
-{
-	char	*dst;
+#include "../../include/so_long.h"
 
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+size_t	ft_check_c_max(t_data *data)
+{
+	size_t	y;
+	size_t	x;
+	size_t	c_max;
+
+	c_max = 0;
+	y = 0;
+	while (y < data->y_max)
+	{
+		x = 0;
+		while (x < data->x_max)
+		{
+			if (data->map_line[y][x] == 'C')
+				c_max++;
+			x++;
+		}
+		y++;
+	}
+	return (c_max);
 }

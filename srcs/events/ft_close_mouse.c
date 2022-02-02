@@ -6,15 +6,15 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:25:07 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 18:41:26 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/02 14:44:59 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	ft_close_mouse(t_vars vars)
+int	ft_close_mouse(t_data *data)
 {
-	(void)vars;
+	(void)data;
 	{
 		printf("✌️  Bye!\n");
 		exit(EXIT_SUCCESS);
