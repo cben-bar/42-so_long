@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:34:16 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/02 20:43:48 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/03 11:40:15 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ void	ft_player_pos(t_data *data)
 		}
 		y++;
 	}
+	printf("init player pos ok\n");
+	printf("player pos: x = %zu, y = %zu\n", data->x, data->y);
 }

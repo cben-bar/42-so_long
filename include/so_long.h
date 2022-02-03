@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:20:18 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/02 21:08:47 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/03 14:39:14 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 # define WALL_PATH "./sprites/1_coral_100x100.xpm"
 # define EMPTY_PATH "./sprites/0_water_100x100.xpm"
 # define P_PATH "./sprites/P_baby_100x100.xpm"
-# define EXIT_PATH "./sprites/E_swat_100x100.xpm"
+# define EXIT_PATH "./sprites/E_schoolbus_100x100.xpm"
 # define C_PATH "./sprites/C_axe_100x100.xpm"
 
 /* ****************************************************************************
@@ -136,8 +136,8 @@ t_image	*ft_init_image(t_data *data);
 --------------------------------PROTOTYPES RUN--------------------------------
 * ************************************************************************** */
 
-void	ft_run(t_data *data);
+void	ft_run(t_data *data, t_image *img);
 void	ft_player_pos(t_data *data);
-void	ft_push_img(t_data *data, t_image *img);
+void	ft_push_img(t_data *data, t_image *img, void **mlx, void **win);
 
 #endif

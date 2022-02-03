@@ -6,13 +6,14 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:27:30 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/02 21:09:27 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/03 13:35:18 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	ft_run(t_data *data)
+void	ft_run(t_data *data, t_image *img)
 {
-	ft_push_img(data, data->img);
+	ft_push_img(data, img, &data->mlx, &data->win);
+	printf("run ok\n");
 }
