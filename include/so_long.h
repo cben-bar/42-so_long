@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:20:18 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/03 14:39:14 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/07 19:54:50 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@
 * ************************************************************************** */
 
 # define KEY_ESC 53
-//# define KEY_UP 13
-//# define KEY_DWN 1
-//# define KEY_R 2
-//#define KEY_L 0
+# define KEY_UP 13
+# define KEY_DWN 1
+#define KEY_L 0
+# define KEY_R 2
 
 /* ****************************************************************************
 ---------------------------------SPRITES PATH----------------------------------
@@ -60,11 +60,11 @@ typedef enum	s_bool
 
 typedef struct	s_image
 {
-	void	*player;
-	void	*wall;
-	void	*empty;
-	void	*collectible;
-	void	*exit;
+	void	*pl;
+	void	*wa;
+	void	*em;
+	void	*co;
+	void	*ex;
 }				t_image;
 
 typedef struct s_data
@@ -76,12 +76,13 @@ typedef struct s_data
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
-	int		endian;
 	size_t	x_max;
 	size_t	y_max;
 	size_t	c_max;
+	size_t	c_counter;
 	size_t	y;
 	size_t	x;
+	size_t	mv_counter;
 }				t_data;
 
 /* ****************************************************************************
@@ -106,8 +107,13 @@ void	ft_error_exit(const char *msg);
 -------------------------------PROTOTYPES EVENTS-------------------------------
 * ************************************************************************** */
 
-int		ft_key_events(int keycode);
+int		ft_close_key(void);
 int		ft_close_mouse(t_data *data);
+int		ft_key_events(int keycode, t_data *data);
+void	ft_up(t_data **data);
+void	ft_down(t_data **data);
+void	ft_l(t_data **data);
+void	ft_r(t_data **data);
 
 /* ****************************************************************************
 -------------------------PROTOTYPES CHECK & CLEAR MAP-------------------------
@@ -137,7 +143,7 @@ t_image	*ft_init_image(t_data *data);
 * ************************************************************************** */
 
 void	ft_run(t_data *data, t_image *img);
-void	ft_player_pos(t_data *data);
+void	ft_player_pos(t_data **data);
 void	ft_push_img(t_data *data, t_image *img, void **mlx, void **win);
 
 #endif

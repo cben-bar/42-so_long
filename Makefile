@@ -17,7 +17,7 @@ SRCS		=	./srcs/so_long.c									\
 				./srcs/parsing/ft_check_path_to_dir.c				\
 				./srcs/parsing/ft_error_exit.c						\
 				./srcs/events/ft_close_mouse.c						\
-				./srcs/events/ft_key_events.c						\
+				./srcs/events/ft_close_key.c						\
 				./srcs/check_map/ft_init_map.c						\
 				./srcs/check_map/ft_check_y_max.c					\
 				./srcs/check_map/ft_check_c_max.c					\
@@ -32,8 +32,10 @@ SRCS		=	./srcs/so_long.c									\
 				./srcs/graphic/ft_init_win.c						\
 				./srcs/graphic/ft_init_image.c						\
 				./srcs/run/ft_run.c									\
-				./srcs/graphic/ft_push_img.c							\
-				./srcs/run/ft_player_pos.c
+				./srcs/graphic/ft_push_img.c						\
+				./srcs/run/ft_player_pos.c							\
+				./srcs/events/ft_key_events.c						\
+				./srcs/events/ft_move.c
 
 OBJS		=	${SRCS:.c=.o}
 

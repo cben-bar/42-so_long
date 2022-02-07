@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:27:30 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/03 13:35:18 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/07 19:58:23 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 void	ft_run(t_data *data, t_image *img)
 {
 	ft_push_img(data, img, &data->mlx, &data->win);
-	printf("run ok\n");
+	mlx_hook(data->win, 2, 0, ft_key_events, data);
+	mlx_hook(data->win, 17, 0, ft_close_mouse, NULL);
 }

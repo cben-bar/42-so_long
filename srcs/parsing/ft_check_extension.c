@@ -6,11 +6,12 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:21:49 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/01/28 18:39:15 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/07 19:56:56 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
+
 t_bool	ft_check_extension(const char *file_name)
 {
 	size_t	i;

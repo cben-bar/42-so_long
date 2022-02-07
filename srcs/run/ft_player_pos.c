@@ -6,32 +6,30 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:34:16 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/03 11:40:15 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/07 17:58:41 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	ft_player_pos(t_data *data)
+void	ft_player_pos(t_data **data)
 {
 	size_t	y;
 	size_t	x;
 
 	y = 0;
-	while (y < data->y_max)
+	while (y < (*data)->y_max)
 	{
 		x = 0;
-		while (x < data->x_max)
+		while (x < (*data)->x_max)
 		{
-			if (data->map_line[y][x] == 'P')
+			if ((*data)->map_line[y][x] == 'P')
 			{
-				data->y = y;
-				data->x = x;
+				(*data)->y = y;
+				(*data)->x = x;
 			}
 			x++;
 		}
 		y++;
 	}
-	printf("init player pos ok\n");
-	printf("player pos: x = %zu, y = %zu\n", data->x, data->y);
 }
