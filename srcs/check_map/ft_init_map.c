@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 18:08:51 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/09 12:13:01 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/09 15:34:29 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@ t_data	*ft_init_map(char **av)
 	ret->c_max = ft_check_c_max(data);
 	ret->mv_counter = 0;
 	ret->c_counter = 0;
-	printf ("Ok baby, you have %zu axes to collect before you go to school\n",
-		data->c_max);
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:20:18 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/09 12:31:48 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/09 14:38:41 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
-# include "../../mlx/mlx.h"
+# include "../mlx/mlx.h"
 # include "../libft/libft.h"
 
 /* ****************************************************************************

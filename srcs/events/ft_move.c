@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 19:40:51 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/09 12:07:58 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/02/09 15:27:22 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	ft_up(t_data **data)
 	if (*target_pos == '1')
 		return ;
 	ft_move(data, initial_pos, target_pos);
-	printf("Moves: %zu\n", (*data)->mv_counter);
 }
 
 void	ft_down(t_data **data)
@@ -67,7 +66,6 @@ void	ft_down(t_data **data)
 	if (*target_pos == '1')
 		return ;
 	ft_move(data, initial_pos, target_pos);
-	printf("Moves: %zu\n", (*data)->mv_counter);
 }
 
 void	ft_l(t_data **data)
@@ -84,7 +82,6 @@ void	ft_l(t_data **data)
 	if (*target_pos == '1')
 		return ;
 	ft_move(data, initial_pos, target_pos);
-	printf("Moves: %zu\n", (*data)->mv_counter);
 }
 
 void	ft_r(t_data **data)
@@ -101,5 +98,4 @@ void	ft_r(t_data **data)
 	if (*target_pos == '1')
 		return ;
 	ft_move(data, initial_pos, target_pos);
-	printf("Moves: %zu\n", (*data)->mv_counter);
 }

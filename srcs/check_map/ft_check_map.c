@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 18:48:32 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/02/01 19:49:26 by cben-bar         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:35:57 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,9 @@ void	ft_check_map(t_data *data)
 		ft_error_exit("Only one player is neded");
 	if (!ft_check_map_border(data))
 		ft_error_exit("Invalid map border");
+	else
+	{
+		printf ("Ok baby, you have %zu axes to collect before "
+			"you go to school\n", data->c_max);
+	}
 }
