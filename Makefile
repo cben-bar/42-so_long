@@ -44,7 +44,7 @@ BONUS_OBJS	=	${BONUS_SRCS:.c=.o}
 .c.o	:
 	${CC} ${FLAGS} ${HEADER} -c $< -o ${<:.c=.o}
 
-$(NAME)	:	$(OBJS)
+$(NAME)	:	$(OBJS) ./include/so_long.h ./mlx/mlx.h ./libft/libft.h
 	make -C mlx
 	make -C libft
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(LIB_FLAG) $(MLX_FLAGS)
