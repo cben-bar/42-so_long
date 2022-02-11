@@ -39,8 +39,6 @@ SRCS		=	./srcs/so_long.c									\
 
 OBJS		=	${SRCS:.c=.o}
 
-BONUS_OBJS	=	${BONUS_SRCS:.c=.o}
-
 .c.o	:
 	${CC} ${FLAGS} ${HEADER} -c $< -o ${<:.c=.o}
 
@@ -54,7 +52,7 @@ all		:	$(NAME)
 clean	: 
 	make clean -C mlx
 	make clean -C libft
-	rm -rf $(OBJS) $(BONUS_OBJS)
+	rm -rf $(OBJS)
 
 fclean	:	clean
 	make clean -C mlx

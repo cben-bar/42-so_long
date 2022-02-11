@@ -6,7 +6,7 @@
 #    By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 17:54:31 by cben-bar          #+#    #+#              #
-#    Updated: 2022/01/28 18:19:36 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/02/11 17:18:10 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,15 @@ SRCS		=	ft_atoi.c			\
 				ft_isdigit.c		\
 				ft_isprint.c   		\
 				ft_itoa.c			\
+				ft_lstadd_back.c	\
+				ft_lstadd_front.c	\
+				ft_lstclear.c		\
+				ft_lstdelone.c		\
+				ft_lstiter.c		\
+				ft_lstlast.c		\
+				ft_lstmap.c			\
+				ft_lstnew.c			\
+				ft_lstsize.c		\
 				ft_memchr.c			\
 				ft_memcmp.c			\
 				ft_memcpy.c			\
@@ -51,21 +60,9 @@ SRCS		=	ft_atoi.c			\
 				ft_substr.c			\
 				ft_tolower.c		\
 				ft_toupper.c		\
-				get_next_line.c
-
-BON			=	ft_lstadd_front.c	\
-				ft_lstnew.c			\
-				ft_lstsize.c		\
-				ft_lstlast.c		\
-				ft_lstadd_back.c	\
-				ft_lstdelone.c		\
-				ft_lstclear.c		\
-				ft_lstiter.c		\
-				ft_lstmap.c			\
+				get_next_line.c		\
 
 OBJS		= 	$(SRCS:.c=.o)
-
-BON_OBJS	= 	$(BON:.c=.o) 
 
 all :			$(NAME)
 
@@ -76,14 +73,11 @@ $(NAME)	:		$(OBJS)
 				$(CC) $(FLAGS) -c $< -o ${<:.c=.o}
 
 clean :
-				rm -f $(OBJS) $(BON_OBJS)
+				rm -f $(OBJS)
 
 fclean :		clean
 				rm -f $(NAME)
 
 re :			fclean all
-
-bonus :			$(NAME) $(BON_OBJS)
-				ar rcs $(NAME) $(BON_OBJS) 
 
 .PHONY :		all clean fclean re bonus
